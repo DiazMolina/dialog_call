@@ -1,5 +1,6 @@
 import 'package:dialog_call/digit_button.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NumPad extends StatefulWidget {
   @override
@@ -7,16 +8,14 @@ class NumPad extends StatefulWidget {
 }
 
 class _NumPadState extends State<NumPad> {
-  final controller =TextEditingController();
+  final controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: <Widget>[
         TextField(
           controller: controller,
           cursorColor: Colors.green,
-          
         ),
         Table(
           children: [
@@ -27,7 +26,17 @@ class _NumPadState extends State<NumPad> {
             TableRow(children: ['*', '0', '#'].map(DigitToButton).toList()),
           ],
         ),
-        FloatingActionButton(onPressed: (){},
+        FloatingActionButton(
+          onPressed: () async {
+            const url = 'tel:9';
+            if (await canLaunch(url)) {
+              await launch(url);
+              debugPrint("correcto");
+            } else {
+              showDialog(context: null,
+                  builder: (ctx)=>Text("Fallo :("));
+            }
+          },
           child: Icon(Icons.phone),
         )
       ],
@@ -35,8 +44,10 @@ class _NumPadState extends State<NumPad> {
   }
 
   DigitButton DigitToButton(String digit) {
-    return DigitButton(text: digit, onPressed: () {
-      controller.text = controller.text + digit;
-    });
+    return DigitButton(
+        text: digit,
+        onPressed: () {
+          controller.text = controller.text + digit;
+        });
   }
 }
