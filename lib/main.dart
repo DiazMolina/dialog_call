@@ -18,16 +18,32 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Flutter Call Center"),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Flutter Call Center"),
+          centerTitle: true,
+          bottom: TabBar(tabs: [
+            Text("A"),
+            Text("B"),
+            Text("C"),
+          ]),
+        ),
+        body: TabBarView(
           children: <Widget>[
-
-            NumPad()
+            Container(decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/data.jpg"), colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.2),BlendMode.dstATop))),
+              child: Center(
+                child: Column(
+                  children: <Widget>[
+                    //Opacity(opacity: 0.2,child: Image.asset("assets/images/logo.png",fit: BoxFit.cover,)),
+                    NumPad()
+                  ],
+                ),
+              ),
+            ),
+            Text("Hola1"),
+            Text("hola2")
           ],
         ),
       ),

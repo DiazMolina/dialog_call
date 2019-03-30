@@ -16,6 +16,9 @@ class _NumPadState extends State<NumPad> {
         TextField(
           controller: controller,
           cursorColor: Colors.green,
+          keyboardType: TextInputType.number,
+          textInputAction: TextInputAction.done,
+
         ),
         Table(
           children: [
