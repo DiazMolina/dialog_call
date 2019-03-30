@@ -1,5 +1,6 @@
 import 'package:dialog_call/digit_button.dart';
 import 'package:dialog_call/example1.dart';
+import 'package:dialog_call/example2.dart';
 import 'package:dialog_call/num_pad.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +35,7 @@ class MyHomePage extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
             Example1(),
-            Text("Hola1"),
+            Example2(),
             Text("hola2")
           ],
         ),
