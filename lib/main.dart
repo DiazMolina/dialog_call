@@ -1,4 +1,5 @@
 import 'package:dialog_call/digit_button.dart';
+import 'package:dialog_call/example1.dart';
 import 'package:dialog_call/num_pad.dart';
 import 'package:flutter/material.dart';
 
@@ -32,16 +33,7 @@ class MyHomePage extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            Container(decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/data.jpg"), colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.2),BlendMode.dstATop))),
-              child: Center(
-                child: Column(
-                  children: <Widget>[
-                    //Opacity(opacity: 0.2,child: Image.asset("assets/images/logo.png",fit: BoxFit.cover,)),
-                    NumPad()
-                  ],
-                ),
-              ),
-            ),
+            Example1(),
             Text("Hola1"),
             Text("hola2")
           ],
