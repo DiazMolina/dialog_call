@@ -26,10 +26,6 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Column(
           children: <Widget>[
-            DigitButton(
-              onPressed: () {},
-              text: "1",
-            ),
             NumPad()
           ],
         ),
