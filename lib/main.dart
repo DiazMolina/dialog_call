@@ -1,4 +1,5 @@
 import 'package:dialog_call/digit_button.dart';
+import 'package:dialog_call/num_pad.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -22,15 +23,16 @@ class MyHomePage extends StatelessWidget {
         title: Text("Flutter Call Center"),
         centerTitle: true,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Center(
-              child: DigitButton(
-            onPressed: () {},
-            text: "1",
-          ))
-        ],
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            DigitButton(
+              onPressed: () {},
+              text: "1",
+            ),
+            NumPad()
+          ],
+        ),
       ),
     );
   }
