@@ -24,7 +24,13 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[Center(child: DigitButton(onPressed: (){},text: "1",))],
+        children: <Widget>[
+          Center(
+              child: DigitButton(
+            onPressed: () {},
+            text: "1",
+          ))
+        ],
       ),
     );
   }

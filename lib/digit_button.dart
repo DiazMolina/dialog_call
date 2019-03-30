@@ -7,11 +7,18 @@ class DigitButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return RawMaterialButton(
       onPressed: onPressed,
-      fillColor: Colors.green,
+      fillColor: Colors.white,
       elevation: 2.0,
-      child: Text(text,style: TextStyle(color: Colors.white,fontSize: 18),),
+      textStyle: theme.accentTextTheme.button.copyWith(
+        color: Colors.blue[600],
+        fontSize: 28.0
+      ),
+      shape: StadiumBorder(),
+
+      child: Text(text),
     );
   }
 }
