@@ -28,7 +28,7 @@ class _NumPadState extends State<NumPad> {
         ),
         FloatingActionButton(
           onPressed: () async {
-            const url = 'tel:9';
+            final url = 'tel:${controller.text}';
             if (await canLaunch(url)) {
               await launch(url);
               debugPrint("correcto");
