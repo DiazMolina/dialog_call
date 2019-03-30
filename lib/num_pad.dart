@@ -27,6 +27,9 @@ class _NumPadState extends State<NumPad> {
             TableRow(children: ['*', '0', '#'].map(DigitToButton).toList()),
           ],
         ),
+        FloatingActionButton(onPressed: (){},
+          child: Icon(Icons.phone),
+        )
       ],
     );
   }
